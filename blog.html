@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin:3vw 1vw;
+    margin: ;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display:flex;
+    justify-content: center;    
+    gap:2vw;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header .profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 3px solid white;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header h1 span {
+    color: #ffeb3b;
+}
+
+.blogs{
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #4CAF50;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.card-content .read-more {
+    text-decoration: none;
+    color: white;
+    background: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.card-content .read-more:hover {
+    background: #45a049;
+}
+
+.contact-me {
+    padding: 20px;
+    background: #4CAF50;
+    text-align: center;
+}
+
+.contact-me ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.smidia-github{
+    width:2rem;
+}
+.smidia{
+    width:1.2rem;
+    border-radius: 40%;
+}
+
+.contact-me ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.leave-comment {
+    padding: 20px;
+    text-align: center;
+    background: #4CAF50;
+}
+
+.leave-comment form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.leave-comment input,
+.leave-comment textarea,
+.leave-comment button {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.leave-comment button {
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.leave-comment button:hover {
+    background: #45a049;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px;
+    background:#4CAF50;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="blog.html">BLOGS</a></li>
+            </ul>
+            <hr>
+        </nav>
+        <div class="profile">
+        <img src="profilepic.png" alt="sunildharajiya">
+        <h1><span>SUNIL</span> DHARAJIYA</h1>
+        </div>
+        </header>
+        <hr>
+        <main>
+            <div class= "layout">
+                <div class="card">
+        <img src="mdn_logo.png" alt="mdn Image">
+        <div class="card-content">
+            <h3>Mozilla Developer Network (MDN)</h3>
+            <p>Explore the MDN Web Docs blog for the latest web development insights, tutorials, and updates. Learn about new features, best practices, and tools to enhance your web development journey.</p>
+            <a href="mdn.html" class="read-more">Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="httpvshttps.png" alt=" Image">
+        <div class="card-content">
+            <h3>Understanding HTTP and HTTPS: A Guide to Web Protocols</h3>
+            <p>Learn the key differences between HTTP and HTTPS, their roles in web security, and why switching to HTTPS is essential for protecting user data, boosting SEO, and improving trust on your website</p>
+            <a href="http_vs_https.html" class="read-more">Read More</a>
+        </div>
+    </div>
+    </div>
+    </main>
+    <hr>
+    <section class="contact-me">
+            <h2>Contact me</h2>
+               <ul>
+                   <li><a href="">email : sunildharajiyablack@gmail.com</a></li>
+               </ul>
+               <br>
+               <ul>
+                   <li><a href = "https://github.com/Sunildharajiya" target="_blank"><img src="GitHub-logo.png" alt="" class = "smidia-github"></a></li>
+                   <li><a href = "" target="_blank"><img src="240px-LinkedIn_logo_initials.png" alt="" class = "smidia"></a></li>
+                   <li><a href = "https://www.instagram.com/_sunil_d._" target="_blank"><img src="640px-Instagram_logo_2022.svg.png" alt="" class = "smidia"></a></li>
+                   <li><a href = "https://x.com/_sunil_d_" target="_blank"><img src="768px-X_logo.jpg" alt="" class = "smidia"></a></li>
+                   <li><a href = "https://www.facebook.com/share/2NgSSgZEGkGWEoN1/" target="_blank"><img src="facebook-logo-2019.png" alt="" class = "smidia"></a></li>
+               </ul>
+        </section>
+        <hr>
+        <section class="leave-comment">
+        <h2>leave comment</h2>
+      <form action="https://formsubmit.co/sunildharajiyablack@gmail.com" method="POST" />   
+     <input type="text" name="name" required
+     placeholder = "your full name">
+     <input type="input" name="comment" required placeholder="leave your comment here">
+     <button type="submit">Send</button>
+</form>
+        </section>
+        <hr>
+        <footer>
+          &copy; all rights are resivred by sunil dharajiya 
+    </footer>
+</body>
+</html>
