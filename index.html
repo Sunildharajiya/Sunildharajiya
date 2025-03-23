@@ -1,101 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>sunil dharajiya - portfolio</title>
-    <link rel = "stylesheet" href = "style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunil Dharajiya - Portfolio</title>
+      <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a:hover {
+      color: #ff6b6b;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 90vh;
+      background: black;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .hero .btn {
+      background: #ff6b6b;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      background: #ff4c4c;
+    }
+
+    /* About Section */
+    .about {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    img {
+      width: 30%;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .about .skills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .about .skill {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 150px;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 4rem 0;
+      background: #fff;
+    }
+
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .project-card p {
+      padding: 0 1rem 1rem;
+      margin: 0;
+    }
+
+    .project-card a {
+      display: block;
+      text-align: center;
+      background: #ff6b6b;
+      color: #fff;
+      padding: 0.75rem;
+      transition: background 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background: #ff4c4c;
+    }
+    
+    <!-- blog -->
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+      gap: 20rem;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      margin-top : 5vh;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-top : 1vw;
+    }
+
+    .blog-card .content {
+      padding: 1rem;
+    }
+
+    .blog-card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .blog-card p {
+      margin: 0.5rem 0;
+      color: #555;
+    }
+
+    .blog-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+
+    /* Contact Section */
+    .social-icons{
+    background-color: #2C3E45; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0vw;
+    margin-top: 20vw ;
+    padding:1vw;
+}
+   .social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+    /* Footer */
+    footer {
+      
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    footer a {
+      color: #ff6b6b;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="profile">
-        <h1><span>SUNIL</span> DHARAJIYA</h1>
-        </div>
-        
-    </header>
-    <main>
-        <section class="skills">
-            <h2>My skills</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JAVASCRIPT</li>
-                <li>WEB DESIGN</li>
-                <li>GRAPHICS DESIGN</li>
-            </ul>
-        </section>
-        
-        <section class="about-me">
-          <hr>
-            <h2>About me</h2>
-            <p>Hello! My name is Sunil Dharajiya, a web design expert and beginner web developer from Ahmedabad, Gujarat. With a solid foundation in HTML and CSS, I’m currently mastering JavaScript to bring dynamic functionality to my projects.</p>
-        </section>
-        <hr>
-        <section class="projects">
-            <h2>Projects</h2>
-            <div class="project-card">
-  <div class="project-details">
-    <h3 class="project-title">teaching platform</h3>
-    <p class="project-description">
-       example of teaching platform
-    </p>
-    <a href="https://github.com/Sunildharajiya/teaching-platform" target="_blank" class="project-link">GITHUB</a>
-    <a href="https://teachingplatform.netlify.app/" target="_blank" class="project-link">WEB VIEW</a><br>
-    <a href="" class="project-link">ABOUT</a>
-  </div>
-</div>
+  <!-- Header -->
+  <header>
+    
+  </header>
 
-        </section>
-        <hr>
-        <section class="blogs">
-            <h2>Blog</h2>
-            <div class= "layout">
-                <div class="card">
-        <div class="card-content">
-            <h3>Mozilla Developer Network (MDN)</h3>
-            <p>Explore the MDN Web Docs blog for the latest web development insights, tutorials, and updates. Learn about new features, best practices, and tools to enhance your web development journey.</p>
-            <a href="blogs/Mdn/mdn.html" class="read-more">Read More</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-content">
-            <h3>Understanding HTTP and HTTPS: A Guide to Web Protocols</h3>
-            <p>Learn the key differences between HTTP and HTTPS, their roles in web security, and why switching to HTTPS is essential for protecting user data, boosting SEO, and improving trust on your website</p>
-            <a href="blogs/Http_vs_https/http_vs_https.html" class="read-more">Read More</a>
-        </div>
-    </div>
-    </div>
-        </section>
-        <hr>
-        <section class="contact-me">
-            <h2>Contact me</h2>
-               <ul>
-                   <li><a href="">email : sunildharajiyablack@gmail.com</a></li>
-               </ul>
-               <br>
-               <ul>
-                   <li><a href = "https://github.com/Sunildharajiya" target="_blank"><img src="Img/GitHub-logo.png" alt="" class = "smidia-github"></a></li>
-                   <li><a href = "" target="_blank"><img src="Img/240px-LinkedIn_logo_initials.png" alt="" class = "smidia"></a></li>
-                   <li><a href = "https://www.instagram.com/_sunil_d._" target="_blank"><img src="Img/640px-Instagram_logo_2022.svg.png" alt="" class = "smidia"></a></li>
-                   <li><a href = "https://x.com/_sunil_d_" target="_blank"><img src="Img/768px-X_logo.jpg" alt="" class = "smidia"></a></li>
-                   <li><a href = "https://www.facebook.com/share/2NgSSgZEGkGWEoN1/" target="_blank"><img src="Img/facebook-logo-2019.png" alt="" class = "smidia"></a></li>
-               </ul>
-        </section>
-        <hr>
-        <section class="leave-comment">
-        <h2>leave comment</h2>
-      <form action="https://formsubmit.co/sunildharajiyablack@gmail.com" method="POST" />   
-     <input type="text" name="name" required
-     placeholder = "your full name">
-     <input type="input" name="comment" required placeholder="leave your comment here">
-     <button type="submit">Send</button>
-</form>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+     <img src="Img/sunil.jpg" alt="">
+    <h1>Hi, I'm Sunil Dharajiya</h1>
+    <h2>A Web Developer & Designer</h2>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
 
-        </section>
-    </main>
-    <hr>
-    <footer>
-        &copy; all rights are resivred by sunil dharajiya 
-    </footer>
-    <script src = "script.js"></script>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm a passionate web developer with expertise in HTML, CSS, JavaScript, and Bootstrap. I love building beautiful and functional websites.</p>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">bootstrap</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>TEACHING PLATFORM</h3>
+          <p>Designed and developed a fully responsive teaching platform.</p>
+          <a href="http://teachingplatform.netlify.app">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>A modern portfolio website to showcase my work.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section id="blog" class="section">
+    <div class="container">
+      <h2>Latest Blog Posts</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="content">
+            <h3>Morzilla developer network </h3>
+            <p>About Morzilla developer network</p>
+            <a href="blogs/Mdn/mdn.html">Read More</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="content">
+            <h3> HTTP V/S HTTPS</h3>
+            <p>learn what is http and what is https</p>
+            <a href="blogs/Http_vs_https/http_vs_https.html">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+      <div class="social-icons">
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Sunil Dharajiya. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
