@@ -7,13 +7,6 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-  <li><a href="index.html">HOME</a></li>
-  <li><a href="blog.html">BLOGS</a></li>
-            </ul>
-            <hr>
-        </nav>
         <div class="profile">
         <img src="Img/profilepic.png" alt="sunildharajiya">
         <h1><span>SUNIL</span> DHARAJIYA</h1>
@@ -43,14 +36,13 @@
         <section class="projects">
             <h2>Projects</h2>
             <div class="project-card">
-  <img src="Img/project1.png" alt="Project Thumbnail" class="project-image" />
   <div class="project-details">
-    <h3 class="project-title">blog website</h3>
+    <h3 class="project-title">teaching platform</h3>
     <p class="project-description">
-     this is very baisic blog website to write my opinion.
+       example of teaching platform
     </p>
-    <a href="https://github.com/your-repo" target="_blank" class="project-link">GITHUB</a>
-    <a href="http://blogsbysunil.netlify.app" target="_blank" class="project-link">WEB VIEW</a><br>
+    <a href="https://github.com/Sunildharajiya/teaching-platform" target="_blank" class="project-link">GITHUB</a>
+    <a href="https://teachingplatform.netlify.app/" target="_blank" class="project-link">WEB VIEW</a><br>
     <a href="" class="project-link">ABOUT</a>
   </div>
 </div>
@@ -61,7 +53,6 @@
             <h2>Blog</h2>
             <div class= "layout">
                 <div class="card">
-        <img src="blogs/Mdn/mdn_logo.png" alt="mdn Image">
         <div class="card-content">
             <h3>Mozilla Developer Network (MDN)</h3>
             <p>Explore the MDN Web Docs blog for the latest web development insights, tutorials, and updates. Learn about new features, best practices, and tools to enhance your web development journey.</p>
@@ -69,7 +60,6 @@
         </div>
     </div>
     <div class="card">
-        <img src="blogs/Http_vs_https/httpvshttps.png" alt=" Image">
         <div class="card-content">
             <h3>Understanding HTTP and HTTPS: A Guide to Web Protocols</h3>
             <p>Learn the key differences between HTTP and HTTPS, their roles in web security, and why switching to HTTPS is essential for protecting user data, boosting SEO, and improving trust on your website</p>
@@ -110,9 +100,22 @@
         </section>
     </main>
     <hr>
-    <footer>
-        &copy; all rights are resivred by sunil dharajiya 
+    <footer> 
     </footer>
-    <script src = "script.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+    let name = document.querySelector('input[name="name"]').value.trim();
+    let comment = document.querySelector('input[name="comment"]').value.trim();
+
+    if (name === "" || comment === "") {
+        e.preventDefault();
+        alert("Please fill out all fields before submitting.");
+    }
+});
+
+// Dynamic Year in Footer
+
+document.querySelector("footer").innerHTML = `&copy; ${new Date().getFullYear()} All rights reserved by Sunil Dharajiya`;
+    </script>
 </body>
 </html>
