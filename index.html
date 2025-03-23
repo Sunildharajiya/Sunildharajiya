@@ -8,7 +8,6 @@
 <body>
     <header>
         <div class="profile">
-        <img src="Img/profilepic.png" alt="sunildharajiya">
         <h1><span>SUNIL</span> DHARAJIYA</h1>
         </div>
         
@@ -24,13 +23,11 @@
                 <li>GRAPHICS DESIGN</li>
             </ul>
         </section>
-        <hr>
+        
         <section class="about-me">
+          <hr>
             <h2>About me</h2>
             <p>Hello! My name is Sunil Dharajiya, a web design expert and beginner web developer from Ahmedabad, Gujarat. With a solid foundation in HTML and CSS, I’m currently mastering JavaScript to bring dynamic functionality to my projects.</p>
-
-<p>My goal is to create impactful web solutions that merge creativity and functionality. I believe in continuous learning and sharing my progress to inspire others on similar journeys.
-</p>
         </section>
         <hr>
         <section class="projects">
@@ -69,10 +66,6 @@
     </div>
         </section>
         <hr>
-        <section class="vidios">
-            <h2>Vidios</h2>
-        </section>
-        <hr>
         <section class="contact-me">
             <h2>Contact me</h2>
                <ul>
@@ -100,22 +93,9 @@
         </section>
     </main>
     <hr>
-    <footer> 
+    <footer>
+        &copy; all rights are resivred by sunil dharajiya 
     </footer>
-    <script>
-        document.querySelector("form").addEventListener("submit", function (e) {
-    let name = document.querySelector('input[name="name"]').value.trim();
-    let comment = document.querySelector('input[name="comment"]').value.trim();
-
-    if (name === "" || comment === "") {
-        e.preventDefault();
-        alert("Please fill out all fields before submitting.");
-    }
-});
-
-// Dynamic Year in Footer
-
-document.querySelector("footer").innerHTML = `&copy; ${new Date().getFullYear()} All rights reserved by Sunil Dharajiya`;
-    </script>
+    <script src = "script.js"></script>
 </body>
 </html>
