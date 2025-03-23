@@ -100,7 +100,7 @@ h2 {
 }
 
 .card h3{
-  font-size: 3vw;
+  font-size: 2vw;
 }
 .card p{
   font-size: 1vw;
@@ -135,6 +135,7 @@ h2 {
 }
 
 .smidia {
+    display: flex;
     width: 30px;
     margin: 5px;
 }
