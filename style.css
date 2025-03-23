@@ -95,8 +95,15 @@ h2 {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    max-width: 300px;
+    margin: 3vw;
+    max-width: 40%;
+}
+
+.card h3{
+  font-size: 3vw;
+}
+.card p{
+  font-size: 1vw;
 }
 
 .read-more {
