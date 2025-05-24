@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>Documentation</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            margin: 5vh 0;
+            background: #fff;
+            padding: 4vh auto;
+            border: 1px solid black;
+            border-radius: 3vw;
+            overflow: hidden;
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            padding: 3vw 4vw;
+            margin: 0;
+        }
+        
+        .card p {
+            padding: 1vw 4vw;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        
+        .card a {
+            font-size: 0.5rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3vw;
+            background: #ff6b6b;
+            color: #fff;
+            margin: 2vw 3vw;
+            padding: 0.5rem;
+            transition: background 0.3s ease;
+        }
+        
+        .card a:hover {
+            background: #ff4c4c;
+        }
+        
+        /* Media Queries for Responsiveness */
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            .card {
+                margin: 3vh 0;
+                border-radius: 5vw;
+            }
+            .card h3 {
+                padding: 5vw 6vw;
+            }
+            .card p {
+                padding: 2vw 6vw;
+            }
+            .card a {
+                margin: 3vw 4vw;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .card {
+                margin: 2vh 0;
+                border-radius: 10vw;
+            }
+            .card h3 {
+                padding: 8vw 10vw;
+            }
+            .card p {
+                padding: 4vw 10vw;
+            }
+            .card a {
+                margin: 5vw 6vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project">
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <h3>HOW TO CREATE WEATHER APP</h3>
+                    <hr>
+                    <p>This documentation provides a step-by-step guide on how to create a simple weather app using HTML, CSS, and JAVASCRIPT. Using open weather's API</p>
+                    <a href="Weather_app/Main.html">READ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
