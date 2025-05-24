@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Build a Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="site-header">
+    <nav class="navbar">
+      <h1 class="site-title">🌦️ How to Build a Weather App</h1>
+      <hr />
+      <ul class="nav-steps">
+        <a id="preview" href="app.html">preview</a><hr>
+        <span>Jump to Step:</span>
+        <li><a href="#step1">1</a></li>
+        <li><a href="#step2">2</a></li>
+        <li><a href="#step3">3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="content">
+
+    <!-- 🔹 STEP 1: Project Setup -->
+    <section id="step1" class="card">
+      <h2>Step 1: Project Setup</h2>
+      <p>This step covers how to initialize the project and create essential files.</p>
+      <ul>
+        <li>Create a folder for your app (e.g. <code>weather-app</code>)</li>
+        <li>Inside it, create three files: <code>index.html</code>, <code>style.css</code>, and <code>script.js</code></li>
+      </ul>
+
+      <div class="code-block">
+        <h3>Basic HTML Template:</h3>
+        <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Weather App&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;Weather App&lt;/h1&gt;
+    &lt;input type="text" id="city" placeholder="Enter city name" /&gt;
+    &lt;div class="weather-info"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- 🔹 STEP 2: API Integration -->
+    <section id="step2" class="card">
+      <h2>Step 2: API Integration</h2>
+      <p>Use JavaScript and the Fetch API to get real-time weather data from OpenWeatherMap.</p>
+      <ol>
+        <li>Sign up at <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and get your free API key</li>
+        <li>Paste the following code into <code>script.js</code></li>
+      </ol>
+
+      <div class="code-block">
+        <h3>JavaScript for Weather Fetching:</h3>
+        <pre><code class="language-javascript">
+const apiKey = 'YOUR_API_KEY';  // Replace with your real API key
+const cityInput = document.getElementById('city');
+const weatherInfo = document.querySelector('.weather-info');
+
+cityInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const city = cityInput.value.trim();
+    if (city) getWeatherData(city);
+  }
+});
+
+function getWeatherData(city) {
+  const url = \`https://api.openweathermap.org/data/2.5/weather?q=\${city}&appid=\${apiKey}&units=metric\`;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayWeatherData(data))
+    .catch(err => {
+      weatherInfo.innerHTML = '&lt;p&gt;City not found or API error.&lt;/p&gt;';
+      console.error(err);
+    });
+}
+
+function displayWeatherData(data) {
+  const { name } = data;
+  const { temp, humidity } = data.main;
+  const { speed } = data.wind;
+  const { description } = data.weather[0];
+
+  weatherInfo.innerHTML = \`
+    &lt;h2 id="city-name"&gt;\${name}&lt;/h2&gt;
+    &lt;p id="temperature"&gt;Temperature: \${temp}°C&lt;/p&gt;
+    &lt;p&gt;Humidity: \${humidity}%&lt;/p&gt;
+    &lt;p&gt;Wind Speed: \${speed} m/s&lt;/p&gt;
+    &lt;p&gt;Description: \${description}&lt;/p&gt;
+  \`;
+}
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- 🔹 STEP 3: Styling the App -->
+    <section id="step3" class="card">
+      <h2>Step 3: Style the App</h2>
+      <p>Style your app with modern CSS for a clean and responsive interface.</p>
+      <ul>
+        <li>Create a beautiful layout using Flexbox</li>
+        <li>Add gradients and shadows for a modern UI</li>
+      </ul>
+
+      <div class="code-block">
+        <h3>Example CSS (style.css):</h3>
+        <pre><code class="language-css">
+body {
+  background: linear-gradient(to right, #74ebd5, #9face6);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.weather-info {
+  margin-top: 20px;
+}
+
+#temperature {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e67e22;
+}
+        </code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Weather App Tutorial. Created for learning purposes.</p>
+  </footer>
+
+</body>
+</html>
