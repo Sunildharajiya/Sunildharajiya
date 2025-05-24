@@ -4,270 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunil Dharajiya - Portfolio</title>
-      <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
-    }
-
-    a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a:hover {
-      color: #ff6b6b;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 90vh;
-      background: black;
-      background-size: cover;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .hero h2 {
-      font-size: 1.5rem;
-      margin: 1rem 0;
-    }
-
-    .hero .btn {
-      background: #ff6b6b;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .hero .btn:hover {
-      background: #ff4c4c;
-    }
-
-    /* About Section */
-    .about {
-      padding: 4rem 0;
-      text-align: center;
-    }
-
-    img {
-      width: 30%;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-
-    .about .skills {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .about .skill {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 150px;
-    }
-
-    /* Projects Section */
-    .projects {
-      padding: 4rem 0;
-      background: #fff;
-    }
-
-    .projects h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .project-card h3 {
-      padding: 1rem;
-      margin: 0;
-    }
-
-    .project-card p {
-      padding: 0 1rem 1rem;
-      margin: 0;
-    }
-
-    .project-card a {
-      display: block;
-      text-align: center;
-      background: #ff6b6b;
-      color: #fff;
-      padding: 0.75rem;
-      transition: background 0.3s ease;
-    }
-
-    .project-card a:hover {
-      background: #ff4c4c;
-    }
-    
-    <!-- blog -->
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
-      gap: 20rem;
-    }
-
-    .blog-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-10px);
-      margin-top : 5vh;
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      margin-top : 1vw;
-    }
-
-    .blog-card .content {
-      padding: 1rem;
-    }
-
-    .blog-card h3 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    .blog-card p {
-      margin: 0.5rem 0;
-      color: #555;
-    }
-
-    .blog-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #ff6b6b;
-      font-weight: bold;
-    }
-
-    /* Contact Section */
-    .social-icons{
-    background-color: #2C3E45; /* Dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0vw;
-    margin-top: 20vw ;
-    padding:1vw;
-}
-   .social-icons {
-    display: flex;
-    gap: 20px;
-}
-
-.social-icons a {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    transition: transform 0.2s ease-in-out;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2);
-}
-
-    /* Footer */
-    footer {
-      
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    footer a {
-      color: #ff6b6b;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
@@ -277,10 +17,11 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-     <img src="IMG_20250331_102140_343.jpg" alt="">
+     <img src="img/IMG_20250519_191717_272.webp" alt="">
     <h1>Hi, I'm Sunil Dharajiya</h1>
     <h2>A Web Developer & Designer</h2>
     <a href="#projects" class="btn">View My Work</a>
+    <a href="docs/docs.html" class="btn">DOCUMENTENTION</a>
   </section>
 
   <!-- About Section -->
@@ -345,7 +86,7 @@
         <a href="https://github.com/Sunildharajiya" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/sunil-dharajiya-69b185344?" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/sunil_dharajiya__/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:sunildharajiyablack@email.com"><i class="fas fa-envelope"></i></a>
+        <a href="sunildharajiyablack@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
     
 
