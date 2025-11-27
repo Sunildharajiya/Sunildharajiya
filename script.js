@@ -5,7 +5,7 @@ async function loadPosts() {
     try {
         const response = await fetch(API_URL);
         const posts = await response.json();
-        console.log(posts)
+        
         const limitedPosts = posts.slice(0, 4); // Only first 7
 
         displayPosts(limitedPosts);
