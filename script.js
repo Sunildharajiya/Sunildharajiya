@@ -1,28 +1,41 @@
-fetch('https://public-api.wordpress.com/wp/v2/sites/sunildharajiya.wordpress.com/posts')
-      .then(res => res.json())
-      .then(posts => {
-        const blogContainer = document.querySelector("#wordpress");
+const API_URL = "https://public-api.wordpress.com/wp/v2/sites/sunildharajiya.wordpress.com/posts";
 
-        posts.forEach(post => {
-          const div = document.createElement("div");
-          div.className = "col-md-6";
-          div.innerHTML = `
-            <div class="card h-100 shadow-sm border-0">
-              <div class="card-body">
-                <h5 class="card-title">${post.title.rendered}</h5>
-                <p class="card-text">${post.excerpt.rendered.slice(0, 150)}...</p>
-                <a href="${post.link}" target="_blank" class="btn btn-success">Read More</a>
-              </div>
+// Fetch + Display
+async function loadPosts() {
+    try {
+        const response = await fetch(API_URL);
+        const posts = await response.json();
+        console.log(posts)
+        const limitedPosts = posts.slice(0, 4); // Only first 7
+
+        displayPosts(limitedPosts);
+
+    } catch (error) {
+        console.log("Error loading posts:", error);
+    }
+}
+
+function displayPosts(posts) {
+    const container = document.getElementById("wordpress");
+    container.innerHTML = "";
+
+    posts.forEach(post => {
+        const card = document.createElement("div");
+        card.className = "card m-2 p-3 post-card";
+
+        card.innerHTML = `
+            <h3 class="fs-5 fw-bold">${post.title.rendered}</h3>
+
+            <!-- SAME DESCRIPTION AS WORDPRESS -->
+            <div class="post-desc">
+                ${post.excerpt.rendered}
             </div>
-          `;
-          blogContainer.appendChild(div);
-        });
-      })
-      .catch(err => {
-        console.error("Blog fetch error:", err);
-        document.querySelector("#wordpress").innerHTML = `
-          <div class="alert alert-danger" role="alert">
-            Couldn't load blog posts. Please try again later.
-          </div>`;
-      });
-      
+
+            <a href="${post.link}" target="_blank" class="btn btn-success mt-2">Read Post</a>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+loadPosts();
