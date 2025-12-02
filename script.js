@@ -1,12 +1,12 @@
 const API_URL = "https://public-api.wordpress.com/wp/v2/sites/sunildharajiya.wordpress.com/posts";
 
-// Fetch + Display
+// Fetch + Display Posts
 async function loadPosts() {
     try {
         const response = await fetch(API_URL);
         const posts = await response.json();
         
-        const limitedPosts = posts.slice(0, 4); // Only first 7
+        const limitedPosts = posts.slice(0, 4); // Show only first 4 posts
 
         displayPosts(limitedPosts);
 
@@ -21,17 +21,17 @@ function displayPosts(posts) {
 
     posts.forEach(post => {
         const card = document.createElement("div");
-        card.className = "card m-2 p-3 post-card";
+        card.className = "card post-card";
 
         card.innerHTML = `
             <h3 class="fs-5 fw-bold">${post.title.rendered}</h3>
 
-            <!-- SAME DESCRIPTION AS WORDPRESS -->
             <div class="post-desc">
                 ${post.excerpt.rendered}
             </div>
 
-            <a href="${post.link}" target="_blank" class="btn btn-success mt-2">Read Post</a>
+            <!-- OPEN YOUR CUSTOM POST PAGE -->
+            <a href="posts.html?id=${post.id}" class="btn btn-success mt-2">Read Post</a>
         `;
 
         container.appendChild(card);
