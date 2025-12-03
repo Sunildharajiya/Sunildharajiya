@@ -144,8 +144,8 @@ body {
 }
 
 .hero-photo {
-  width: 220px;
-  height: 220px;
+  width: 15vw;
+  height: 15vw;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid rgba(18,225,140,0.12);
@@ -156,6 +156,47 @@ body {
 .hero-name { margin: 0; font-size: 2.4rem; color: #eafdf0; }
 .hero-role { margin: 6px 0 18px; color: var(--muted); font-weight: 600; }
 
+.hero-media {
+  position: relative;
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== RESPONSIVE RING AROUND IMAGE ===== */
+.ring {
+  position: absolute;
+  width: clamp(140px, 18vw, 220px);
+  height: clamp(140px, 18vw, 220px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(18,225,140,0.3) 0%, rgba(0,0,0,0.3) 60%, transparent 70%);
+  border: 2px solid rgba(18,225,140,0.25);
+  box-shadow: 
+      0 0 25px rgba(18,225,140,0.6),
+      0 0 45px rgba(18,225,140,0.3),
+      0 0 70px rgba(18,225,140,0.2);
+  animation: spin 6s linear infinite;
+  z-index: 0;
+}
+
+/* PHOTO: FULLY RESPONSIVE */
+.hero-photo {
+  width: clamp(130px, 15vw, 200px);
+  height: clamp(130px, 15vw, 200px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(18,225,140,0.12);
+  box-shadow: 0 8px 30px rgba(18,225,140,0.3), 0 0 18px rgba(18,225,140,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+/* Ring Rotation Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 /* ========== BUTTONS ========== */
 .btn {
   display: inline-block;
