@@ -63,9 +63,8 @@ Whenever new code is pushed to this GitHub repo, Netlify auto-updates the websit
 ##  Contact Me
 If you want to reach me for projects or collaboration:
 
-**Email:** sunildharajiyaofficial@gmail.com  
+**Email:** sunildharajiyablack@gmail.com  
 **GitHub:** https://github.com/Sunildharajiya  
-**YouTube:** https://www.youtube.com/@SunilDharajiya  
 **Netlify:** https://sunildharajiya.netlify.app
 
 ---
