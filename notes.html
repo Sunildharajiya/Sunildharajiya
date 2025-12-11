@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes - Sunil Dharajiya</title>
+
+<link rel="stylesheet" href="notes.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"> NOTES</a>
+
+    <button class="nav-toggle" onclick="toggleMenu()">
+      <span class="hamburger"></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#notes">Documentation</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- NOTES SECTION -->
+<section class="section" id="notes">
+  <div class="container">
+
+    <h2 class="section-title">Notes by S. M. Dharajiya</h2>
+
+    <!-- 🔍 SEARCH BAR -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search notes...">
+    </div>
+
+    <div class="cards-grid" id="notesCards">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Introduction to Web Development</h3>
+          <p class="card-text">Basics of how the web works, frontend, backend & websites.</p>
+
+          <div class="card-actions">
+            <a href="notes/introduction_to_webdevlopment.html" class="btn btn-primary">
+              Read Notes
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- cards-grid -->
+
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('open');
+}
+
+/* 🔍 LIVE SEARCH FOR NOTES */
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("input", () => {
+  let value = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    let title = card.querySelector(".card-title").textContent.toLowerCase();
+    let text = card.querySelector(".card-text").textContent.toLowerCase();
+
+    if (title.includes(value) || text.includes(value)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
+</body>
+</html>

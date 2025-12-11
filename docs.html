@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta viewport="width=device-width, initial-scale=1.0">
+  <title>Sunil Dharajiya - Documentation</title>
+  <link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-container">
+      <h2 class="logo">Sunil Dharajiya</h2>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="divider"></div>
+
+  <!-- DOCUMENTATION SECTION -->
+  <section id="documentation" class="section">
+
+    <h2 class="section-title">Documentation</h2>
+
+    <!-- 🔍 SEARCH BAR -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search documentation...">
+    </div>
+
+    <div class="cards" id="docCards">
+
+      <!-- CARD 1 -->
+      <div class="card">
+        <h3 class="card-title">How to Create a Weather App</h3>
+        <p class="card-text">
+          This documentation provides a step-by-step guide on creating a simple weather app
+          using HTML, CSS, and JavaScript. Includes API usage and example code.
+        </p>
+        <a href="docs/Weather_app/Main.html" class="btn">Read</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // 🔍 SEARCH FUNCTION
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      let value = searchInput.value.toLowerCase();
+
+      cards.forEach(card => {
+        let title = card.querySelector(".card-title").textContent.toLowerCase();
+        let text = card.querySelector(".card-text").textContent.toLowerCase();
+
+        if (title.includes(value) || text.includes(value)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
