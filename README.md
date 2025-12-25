@@ -19,14 +19,3 @@ If you want to reach me for projects or collaboration:
 **GitHub:** https://github.com/Sunildharajiya  
 **Netlify:** https://sunildharajiya.netlify.app
 
----
-
-## License
-This project is licensed under the **MIT License**.  
-You are free to use, modify, or rebuild it with proper credit.
-
----
-
-## Thank You!
-Thank you for visiting my portfolio repository!  
-If you like this project, please ⭐ the repo on GitHub.
